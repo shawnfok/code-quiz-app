@@ -36,21 +36,24 @@ function getNewQuestion() {
     // get length of options
     var optionLength = currentQuestion.options.length;
 
+    console.log(optionLength)
     // UNSOLVED : push options into availableOptions array
-    for (var i=0; i<optionLength; i++) {
+    for (var i = 0; i < optionLength; i++) {
         availableOptions.push(i)
     }
 
     // UNSOLVED : create options in html
-    for (var i=0; i<optionLength; i++) {
+    for (var i = 0; i < optionLength; i++) {
         var option = document.createElement("div");
-        option. innerHTML = currentQuestion.options[i];
+        option.innerHTML = currentQuestion.options[i];
         option.id = i;
         option.className = "option";
         optionContainer.appendChild(option)
     }
     // add count to counter
     questionCounter++
+
+
 }
 
 
