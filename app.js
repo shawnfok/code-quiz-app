@@ -36,12 +36,14 @@ function getNewQuestion() {
     // get length of options
     var optionLength = currentQuestion.options.length;
 
-    console.log(optionLength)
+    // TEST : adding the clearing line
+    optionsContainer.innerHTML = "";
+    
     // UNSOLVED : push options into availableOptions array
     for (var i = 0; i < optionLength; i++) {
         availableOptions.push(i)
     }
-
+    
     // UNSOLVED : create options in html
     for (var i = 0; i < optionLength; i++) {
         var option = document.createElement("div");
@@ -52,7 +54,6 @@ function getNewQuestion() {
     }
     // add count to counter
     questionCounter++
-
 
 }
 
