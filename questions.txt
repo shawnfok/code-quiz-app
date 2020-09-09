@@ -1,0 +1,84 @@
+q1: What tag is used to render or transform text into an important (bold) version?
+    option 0: u
+    option 1: strong
+    option 2: a
+    option 3: blockquote
+    answer: 1
+
+q2: What tag is used to define a standard cell inside a table?
+    option 0: td
+    option 1: body
+    option 2: h1 to h6
+    option 3: footer
+    answer: 0
+
+q3: What is the element called that is used to describe the set of variables, objects, and functions you explicitly have access to?
+    option 0: Restriction
+    option 1: Output Level
+    option 2: Range
+    option 3: Scope
+    answer: 3
+
+q4: What is the element used – and hidden – in code that explains things and makes the content more readable?
+    option 0: Quotations
+    option 1: Comments
+    option 2: Comparisons
+    option 3: Notes
+    answer: 1
+
+q5: External stylesheets are stored in what type of files?
+    option 0: HTML
+    option 1: Javascript
+    option 2: CSS
+    option 3: None of the above
+    answer: 2
+
+q6: What is the CSS property that sets the size of the whitespace outside the borders of the content?
+    option 0: Block-level
+    option 1: Margin
+    option 2: Spacer
+    option 3: Padding
+    answer: 1
+
+q7: What is the name of the property that is used to define the special state of an element?
+    option 0: Pseudo-class
+    option 1: Syntax
+    option 2: Style
+    option 3: Alignment
+    answer: 0
+
+q8: What tag defines a division or the beginning/end of an individual section in an HTML document?
+    option 0: img
+    option 1: table
+    option 2: div
+    option 3: meta
+    answer: 2
+
+q9: Round the number 4.87 to the nearest integer.
+    option 0: Floor.math(4.87);
+    option 1: Round.math(4.87);
+    option 2: Math.floor(4.87);
+    option 3: Math.round(4.87);
+    answer: 3
+
+q10: Set the variable hobby to the string "programming".
+    option 0: function hobby ("programming");
+    option 1: var hobby = "programming";
+    option 2: "hobby" === "programming";
+    option 3: returns hobby;
+    answer: 1
+
+q11: How do you determine the current Git state of the project?
+    option 0: $ git clone
+    option 1: $ git status
+    option 2: $ git log
+    option 3: $ git push
+    answer: 1
+
+q12: Print the string "I just ate a lot" to the console.
+    option 0: console.log(I just ate a lot);
+    option 1: log.console(I just ate a lot);
+    option 2: console.log("I just ate a lot");
+    option 3: log.console("I just ate a lot");
+    answer: 2
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- home box here -->
+    <div class="home-box custom-box hide">
+        <h3>Instruction</h3>
+        <p>Total number of questions: <span class="total-questions">5</span></p>
+        <button type="button" class="btn">Start Quiz</button>
+    </div>
+    <!-- quiz box here -->
+    <div class="quiz-box custom-box">
+        <div class="question-number">
+        </div>
+        <div class="question-text">
+        </div>
+        <div class="option-container">
+        </div>
+        <div class="next-question-btn">
+            <button type="button" class="btn" onclick="next()">Next</button>
+        </div>
+        <div class="answers-indicator">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- result box here -->
+    <div class="result-box custom-box hide">
+        <h1>Quiz Result</h1>
+        <table>
+            <tr>
+                <td>
+                    Completed questions
+                </td>
+                <td>
+                    <span class="total-question">5</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Correct
+                </td>
+                <td>
+                    <span class="total-correct">3</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Wrong
+                </td>
+                <td>
+                    <span class="total-wrong">2</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Time used
+                </td>
+                <td>
+                    <span class="sec-elapsed">20s</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Totoal score
+                </td>
+                <td>
+                    <span class="total-score">3 / 5</span>
+                </td>
+            </tr>
+        </table>
+        <button type="button" class="btn">Try Again</button>
+        <button type="button" class="btn">Home</button>
+    </div>
+    <script src="quiz.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
