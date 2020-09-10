@@ -116,7 +116,6 @@ function quizOver() {
 function quizResult() {
     resultBox.querySelector(".total-correct").innerHTML = correctAnswers;
     resultBox.querySelector(".total-wrong").innerHTML = questionCounter - correctAnswers;
-    resultBox.querySelector(".sec-elapsed").innerHTML = secElapsed + " sec";
     resultBox.querySelector(".total-score").innerHTML = correctAnswers + " / " + questionCounter;
 }
 
@@ -142,6 +141,26 @@ function goHome() {
     resetQuiz();
 }
 
+// 30 sec countdown
+var timeLeft = 10;
+var elem = document.getElementById('timer');
+var timerId = setInterval(countdown, 1000);
+
+function countdown() {
+    if (timeLeft == -1) {
+        clearTimeout(timerId);
+        timeOut();
+    } else {
+        elem.innerHTML = timeLeft + ' seconds remaining';
+        timeLeft--;
+    }
+}
+
+function timeOut() {
+    alert("Time is up!");
+    quizOver();
+}
+
 // **********STARTING POINT**********
 
 function startQuiz() {
@@ -151,9 +170,9 @@ function startQuiz() {
     quizBox.classList.remove("hide");
     // start timer
     // BUILT TIMER HERE
-
+    countdown()
     // first set all questions into availableQuestions array
     setAvailableQuestions();
     // then call getNewQuestion() function
-    getNewQuestion()
+    getNewQuestion();
 }
