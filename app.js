@@ -5,6 +5,26 @@ var homeBox = document.querySelector(".home-box");
 var quizBox = document.querySelector(".quiz-box");
 var resultBox = document.querySelector(".result-box");
 
+var timeLeft = 30;
+var elem = document.getElementById('timer');
+var timerId = setInterval(countdown, 1000);
+
+// 30 sec countdown
+
+function countdown() {
+    if (timeLeft == -1) {
+        clearInterval(timerId);
+        timeOut();
+    } else {
+        elem.innerHTML = timeLeft + ' seconds remaining';
+        timeLeft--;
+    }
+}
+
+function timeOut() {
+    
+}
+
 var questionCounter = 0;
 var currentQuestion;
 var availableQuestions = [];
@@ -141,26 +161,6 @@ function goHome() {
     resetQuiz();
 }
 
-// 30 sec countdown
-var timeLeft = 10;
-var elem = document.getElementById('timer');
-var timerId = setInterval(countdown, 1000);
-
-function countdown() {
-    if (timeLeft == -1) {
-        clearTimeout(timerId);
-        timeOut();
-    } else {
-        elem.innerHTML = timeLeft + ' seconds remaining';
-        timeLeft--;
-    }
-}
-
-function timeOut() {
-    alert("Time is up!");
-    quizOver();
-}
-
 // **********STARTING POINT**********
 
 function startQuiz() {
@@ -170,7 +170,7 @@ function startQuiz() {
     quizBox.classList.remove("hide");
     // start timer
     // BUILT TIMER HERE
-    countdown()
+    countdown();
     // first set all questions into availableQuestions array
     setAvailableQuestions();
     // then call getNewQuestion() function
