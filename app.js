@@ -5,25 +5,25 @@ var homeBox = document.querySelector(".home-box");
 var quizBox = document.querySelector(".quiz-box");
 var resultBox = document.querySelector(".result-box");
 
-var timeLeft = 30;
-var elem = document.getElementById('timer');
-var timerId = setInterval(countdown, 1000);
 
-// 30 sec countdown
+// time countdown starts
+var timeRemain = document.querySelector(".time");
+var counter = 10;
 
-function countdown() {
-    if (timeLeft == -1) {
-        clearInterval(timerId);
-        timeOut();
-    } else {
-        elem.innerHTML = timeLeft + ' seconds remaining';
-        timeLeft--;
-    }
+function startCountdown() {
+    var Countdown = setInterval(function () {
+        timeRemain.textContent = counter + " seconds remaining";
+        console.log(counter);
+        counter--
+        if (counter <= -1) {
+            console.log("Time is up!");
+            clearInterval(Countdown);
+            quizOver();
+            resetQuiz();
+        }
+    }, 1000);
 }
-
-function timeOut() {
-    
-}
+// time countdown ends
 
 var questionCounter = 0;
 var currentQuestion;
@@ -98,8 +98,8 @@ function getResult(userOption) {
         userOption.classList.add("wrong");
         // if the answer is wrong then show the correct one
         var optionLength = optionContainer.children.length;
-        for (var i=0; i<optionLength; i++) {
-            if(parseInt(optionContainer.children[i].id) === currentQuestion.answer) {
+        for (var i = 0; i < optionLength; i++) {
+            if (parseInt(optionContainer.children[i].id) === currentQuestion.answer) {
                 optionContainer.children[i].classList.add("correct");
             }
         }
@@ -110,7 +110,7 @@ function getResult(userOption) {
 // lock the rest of the options once the an option is selected
 function unclickableOptions() {
     var optionLength = optionContainer.children.length;
-    for (var i=0; i<optionLength; i++) {
+    for (var i = 0; i < optionLength; i++) {
         optionContainer.children[i].classList.add("answered");
     }
 }
@@ -170,7 +170,7 @@ function startQuiz() {
     quizBox.classList.remove("hide");
     // start timer
     // BUILT TIMER HERE
-    countdown();
+    startCountdown();
     // first set all questions into availableQuestions array
     setAvailableQuestions();
     // then call getNewQuestion() function
